@@ -96,6 +96,13 @@ h1, h2 {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.poem-card {
+  transition: transform 0.3s;
+}
+.poem-card:hover {
+  transform: translateY(-5px);
+}
+
 .poem-text {
   white-space: pre-line;
   font-size: 1.2em;
