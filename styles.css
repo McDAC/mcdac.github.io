@@ -84,7 +84,7 @@ figcaption {
 
 /* Заголовки */
 h1, h2, h3 {
-  font-family: 'Cormorant Infant', serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 600; /* Полужирный */
   letter-spacing: 0.5px;
   text-align: center;
