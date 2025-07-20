@@ -116,7 +116,7 @@ body {
 .poem-text {
   font-family: 'Montserrat', serif;
   font-weight: 400;
-  font-style: italic; /* Курсив для стихов */
+  /* font-style: italic; Курсив для стихов */
 }
 
 .poem-date {
