@@ -90,6 +90,13 @@ h1, h2, h3 {
   text-align: center;
 }
 
+h1 {
+  font-size: 2.5rem; /* Крупный заголовок */
+}
+body {
+  font-size: 1.1rem; /* Чуть больше базового */
+}
+
 /* Стихи */
 .poem {
   background: var(--light);
@@ -117,6 +124,12 @@ h1, h2, h3 {
   text-align: center;
   font-style: italic;
   margin: 15px 0;
+}
+
+.poem-meta, footer {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500; /* Средняя насыщенность */
+  font-size: 0.9rem;
 }
 
 /* Стили для нового списка */
