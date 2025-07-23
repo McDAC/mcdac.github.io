@@ -87,7 +87,7 @@ figcaption {
 h1 {
   font-family: 'Lora', serif;
   font-size: 2.5rem; /* Крупный заголовок */
-  font-weight: 500; /* Полужирный */
+  font-weight: 400; /* Полужирный */
   letter-spacing: 0.5px;
   text-align: center;
 }
