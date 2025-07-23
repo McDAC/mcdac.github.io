@@ -83,8 +83,15 @@ figcaption {
 }
 
 /* Заголовки */
-h1, h2, h3 {
+h1 {
   font-family: 'Cormorant Infant', serif;
+  font-weight: 500; /* Полужирный */
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+h2, h3 {
+  font-family: Arial, sans-serif;
   font-weight: 500; /* Полужирный */
   letter-spacing: 0.5px;
   text-align: center;
