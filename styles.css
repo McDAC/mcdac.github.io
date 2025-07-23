@@ -15,7 +15,7 @@
 
 /* Основные стили */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', serif;
   font-weight: 400; /* Обычное начертание */
   line-height: 1.6;
   background: var(--secondary);
@@ -84,7 +84,7 @@ figcaption {
 
 /* Заголовки */
 h1 {
-  font-family: Cormorant Infant, serif;
+  font-family: 'Cormorant Infant', serif;
   font-weight: 500; /* Полужирный */
   letter-spacing: 0.5px;
   text-align: center;
