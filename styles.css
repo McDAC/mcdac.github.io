@@ -15,7 +15,7 @@
 
 /* Основные стили */
 body {
-  font-family: 'Montserrat', serif;
+  font-family: 'Roboto', serif;
   font-weight: 400; /* Обычное начертание */
   font-size: 1.1rem; /* Чуть больше базового */
   line-height: 1.6;
@@ -116,7 +116,7 @@ h2, h3 {
 }
 
 .poem-text {
-  font-family: 'Montserrat', serif;
+  font-family: 'Roboto', serif;
   font-weight: 400;
   /* font-style: italic; Курсив для стихов */
 }
@@ -129,7 +129,7 @@ h2, h3 {
 }
 
 .poem-meta, footer {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500; /* Средняя насыщенность */
   font-size: 0.9rem;
 }
