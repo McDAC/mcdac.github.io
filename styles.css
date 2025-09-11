@@ -1,9 +1,53 @@
+
+    /* Подключаем шрифты локально */
+    @font-face {
+      font-family: 'Lora';
+      src: url('fonts/Lora-Regular.woff2') format('woff2'),
+           url('fonts/Lora-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Lora';
+      src: url('fonts/Lora-Bold.woff2') format('woff2'),
+           url('fonts/Lora-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-Regular.woff2') format('woff2'),
+           url('fonts/Roboto-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-Bold.woff2') format('woff2'),
+           url('fonts/Roboto-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+
+
 /* Глобальные переменные */
 :root {
-  --primary: #5a3e2b;     /* Коричневый */
-  --secondary: #f9f5e9;   /* Кремовый */
-  --text: #333;           /* Тёмный текст */
-  --light: #fff;          /* Белый */
+  --primary: #5a3e2b;
+  --secondary: #f9f5e9;
+  --text: #333;
+  --light: #fff;
+  --accent: #8b5a3c;
+  --border: #e0d6c3;
+  --font-heading: 'Lora', Georgia, serif;
+  --font-body: 'Roboto', Arial, sans-serif;
 }
 
 /* Сброс стандартных отступов */
@@ -15,14 +59,18 @@
 
 /* Основные стили */
 body {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400; /* Обычное начертание */
+  font-family: var(--font-body);
+  font-weight: 400;
   line-height: 1.6;
   background: var(--secondary);
   color: var(--text);
   max-width: 940px;
   margin: 0 auto;
   padding: 20px;
+  /* Оптимизация рендеринга текста */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Шапка */
@@ -54,50 +102,75 @@ nav a:hover {
 
 /* Контент */
 main {
-  padding: 30px;
+  padding: 30px 0;
 }
-
-/* Стили для фотографии автора */
-.author-photo {
-  display: block;          /* Чтобы работали margin: auto */
-  width: 300px;           /* Оптимальный размер */
-  height: 450px;          /* Квадратная форма */
-  object-fit: cover;      /* Обрезка фото по размеру */
-  border-radius: 3px;    /* Закругление углов */
-  margin: 20px auto;      /* Центрирование */
-  border: 0px solid var(--primary); /* Рамка цвета шапки */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Лёгкая тень */
-  transition: all 0.3s;   /* Плавные эффекты */
-}
-
-/* Эффект при наведении */
-.author-photo:hover {
-  transform: scale(1.03); /* Лёгкое увеличение */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-
-figcaption {
-  text-align: center;
-  font-style: italic;
-  color: var(--primary);
-  margin-top: 10px;
-}
-  
 
 /* Заголовки */
 h1, h2, h3 {
-  font-family: 'Lora', serif;
-  font-weight: 600; /* Полужирный */
+  font-family: var(--font-heading);
+  font-weight: 700; /* Единое начертание для стабильности */
   letter-spacing: 0.5px;
   text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary);
 }
 
 h1 {
-  font-size: 2.5rem; /* Крупный заголовок */
+  font-size: 2.5rem;
 }
-body {
-  font-size: 1rem; /* Чуть больше базового */
+
+h2 {
+  font-size: 1.5rem;
+}
+
+/* Стили для фотографии автора */
+figure {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.author-photo {
+  display: block;
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 3px;
+  margin: 20px auto;
+  border: 0px solid var(--primary);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
+
+.author-photo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+figcaption {
+  font-style: normal;
+  color: var(--primary);
+  margin-top: 10px;
+  font-family: var(--font-body);
+  display: block;
+  text-align: center;
+}
+
+/* Блоки контента (биография, контакты) */
+.content-block {
+  background: var(--light);
+  padding: 25px;
+  border-radius: 3px;
+  margin: 30px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.content-block a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.content-block a:hover {
+  opacity: 0.7;
 }
 
 /* Стихи */
@@ -105,50 +178,127 @@ body {
   background: var(--light);
   padding: 25px;
   border-radius: 3px;
-  margin-bottom: 30px;
+  margin: 30px 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
 
-.poem-card {
-  transition: transform 0.3s;
-}
-.poem-card:hover {
-  transform: translateY(-3px);
-}
-
-.poem-text {
-  font-family: 'Roboto', serif;
-  font-weight: 400;
-  /* font-style: italic; Курсив для стихов */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .poem-date {
   color: #666;
-  text-align: center;
+  text-align: left;
   font-style: italic;
   margin: 15px 0;
+
+  display: flex;
+  align-content: space-between;
 }
 
-.poem-meta, footer {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500; /* Средняя насыщенность */
+.poem-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  white-space: pre-wrap;
+  margin: 0;
+  line-height: 1.8;
+  width: 100%;
+}
+
+/* Двухколоночные стихи */
+.poem-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Стили для страницы со списком стихов */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+  justify-content: center;
+  background: var(--light);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.search-box {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 15px 10px 40px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+.search-box::before {
+  content: "🔍";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.year-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.year-btn {
+  padding: 8px 12px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
   font-size: 0.9rem;
+  font-family: var(--font-body);
 }
 
-/* Стили для нового списка */
+.year-btn:hover {
+  background: var(--primary);
+  color: var(--light);
+}
+
+.year-btn.active {
+  background: var(--primary);
+  color: var(--light);
+}
+
+/* Сетка стихов */
 .poems-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 10px;
+  gap: 12px;
+  margin-bottom: 30px;
 }
 
 .poem-card {
   background: var(--light);
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   transition: all 0.3s;
-  border-left: 0px solid var(--primary);
+  color: inherit;
+  text-decoration: none;
+  /* border-left: 3px solid var(--primary); */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .poem-card:hover {
@@ -157,92 +307,113 @@ body {
 }
 
 .poem-title {
-  font-size: 1.1em;
-  margin-bottom: 5px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  line-height: 1.3;
 }
 
 .poem-meta {
-  font-size: 0.9em;
+  font-size: 0.85rem;
   color: #666;
+  margin-top: auto;
 }
 
-.search-container {
-  margin: 20px 0;
+/* Пагинация */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 
-#search-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: 'Georgia', serif;
+.page-btn {
+  padding: 8px 12px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.page-btn:hover {
+  background: var(--primary);
+  color: var(--light);
+}
+
+.page-btn.active {
+  background: var(--primary);
+  color: var(--light);
+}
+
+.page-info {
+  text-align: center;
+  margin-top: 15px;
+  color: #666;
+  font-size: 0.9rem;
 }
 
 /* Адаптивность */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .poem-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .poems-grid {
+    grid-template-columns: 1fr;
+  }
+
   nav ul {
     flex-direction: column;
     gap: 10px;
   }
 
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+    background: var(--light);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  .year-filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .author-photo {
+    width: 85%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  .content-block,
   .poem {
     padding: 20px;
   }
-}
 
-/* Для длинных стихов */
-.poem-columns {
-  padding: 20px 0;
-  column-count: 2;
-  column-fill: auto;       /* Автоматическое заполнение */
-}
-
-.stanza {
-  break-inside: avoid;     /* Запрет разрыва строфы */
-  margin-bottom: 20px;
-}
-
-/* Двухколоночные стихи (новый вариант) */
-.poem-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.poem-columns pre {
-  white-space: pre-wrap;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .poem-columns {
+  .poems-grid {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
-}
-
-
-
-/* Тёмная тема */
-body.dark-theme {
-  --primary: #a5c882;       /* Светло-зелёный */
-  --secondary: #0d1b1e;     /* Тёмный хаки */
-  --text: #f0f7f4;          /* Светло-кремовый */
-  --light: #1e2d2f;         /* Приглушённый зелёный */
-}
-
-/* Кнопка переключения */
-#theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--light);
-  font-size: 24px;
-  z-index: 100;
-}
-
-/* Дополнительно для стихов */
-.dark-theme .poem {
-  background: var(--light);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
