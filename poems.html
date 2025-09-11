@@ -2,12 +2,12 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Стихи | Караван стихов</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="fonts/Lora-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Lora-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
   <header>
@@ -18,92 +18,37 @@
         <li><a href="contacts.html">Контакты</a></li>
       </ul>
     </nav>
-  </header><!-- Оставьте ваше текущее меню -->
+  </header>
 
   <main>
     <h1>Караван стихов</h1>
 
-    <div class="poems-grid">
-      <!-- Пример 1 стиха -->
-      <a href="poems/poem-1.html" class="poem-card">
-        <div class="poem-title">Последний день войны</div>
-        <div class="poem-meta">3 декабря 2009 г</div>
-      </a>
+    <div class="controls">
 
-      <!-- Пример 2 стиха -->
-      <a href="poems/poem-2.html" class="poem-card">
-        <div class="poem-title">Гитара, милая подруга</div>
-        <div class="poem-meta">22 декабря 2009 г</div>
-      </a>
-
-      <!-- Добавьте остальные стихи в таком же формате -->
+      <div class="year-filter">
+        <button class="year-btn active" data-year="all">Все годы</button>
+        <button class="year-btn" data-year="2006">2006</button>
+        <button class="year-btn" data-year="2007">2007</button>
+        <button class="year-btn" data-year="2008">2008</button>
+        <button class="year-btn" data-year="2009">2009</button>
+        <button class="year-btn" data-year="2012">2012</button>
+      </div>
     </div>
 
-    <div class="poems-grid">
-      <!-- Пример 3 стиха -->
-      <a href="poems/poem-3.html" class="poem-card">
-        <div class="poem-title">Отцов, погибших, не забудем!</div>
-        <div class="poem-meta">2 декабря 2009 г</div>
-      </a>
-
-      <!-- Пример 4 стиха -->
-      <a href="poems/poem-4.html" class="poem-card">
-        <div class="poem-title">Новогодняя «лирическая»</div>
-        <div class="poem-meta">5 января 2007 г</div>
-      </a>
-
-      <!-- Добавьте остальные стихи в таком же формате -->
+    <div class="poems-grid" id="poems-container">
+      <!-- Стихи будут добавляться через JavaScript -->
     </div>
 
-    <div class="poems-grid">
-      <!-- Пример 5 стиха -->
-      <a href="poems/poem-5.html" class="poem-card">
-        <div class="poem-title">Здесь должны лежать сугробы.</div>
-        <div class="poem-meta">10 декабря 2009 г</div>
-      </a>
-
-      <!-- Пример 6 стиха -->
-      <a href="poems/poem-6.html" class="poem-card">
-        <div class="poem-title">С днем рождения, село!</div>
-        <div class="poem-meta">10 октября 2007 г</div>
-      </a>
-
-      <!-- Добавьте остальные стихи в таком же формате -->
-    </div>
-    
-    <div class="poems-grid">
-      <!-- Пример 5 стиха -->
-      <a href="poems/poem-7.html" class="poem-card">
-        <div class="poem-title">Моряки — народ особый.</div>
-        <div class="poem-meta">12 декабря 2009 г</div>
-      </a>
-
-      <!-- Пример 6 стиха -->
-      <a href="poems/poem-8.html" class="poem-card">
-        <div class="poem-title">Ответ на вопросы</div>
-        <div class="poem-meta">18 ноября 2009 г</div>
-      </a>
-
-      <!-- Добавьте остальные стихи в таком же формате -->
+    <div class="pagination" id="pagination">
+      <!-- Пагинация будет добавляться через JavaScript -->
     </div>
 
-    <div class="poems-grid">
-      <!-- Пример 5 стиха -->
-      <a href="poems/poem-9.html" class="poem-card">
-        <div class="poem-title">День победы</div>
-        <div class="poem-meta">29 ноября 2009 г</div>
-      </a>
-
-      <!-- Пример 6 стиха -->
-      <a href="poems/poem-10.html" class="poem-card">
-        <div class="poem-title">АПЛ  «Оренбург»</div>
-        <div class="poem-meta">8 марта 2009 г</div>
-      </a>
-
-      <!-- Добавьте остальные стихи в таком же формате -->
+    <div class="page-info" id="page-info">
+      Показано <span id="items-shown">0</span> из <span id="total-items">0</span> стихов
     </div>
-
   </main>
 
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
