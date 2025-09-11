@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Диагностика шрифтов | Караван стихов</title>
+  <style>
+    /* Подключаем шрифты локально */
+    @font-face {
+      font-family: 'Lora';
+      src: url('fonts/Lora-Regular.woff2') format('woff2'),
+           url('fonts/Lora-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    @font-face {
+      font-family: 'Lora';
+      src: url('fonts/Lora-Bold.woff2') format('woff2'),
+           url('fonts/Lora-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-Regular.woff2') format('woff2'),
+           url('fonts/Roboto-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-Bold.woff2') format('woff2'),
+           url('fonts/Roboto-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Базовые стили */
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f9f5e9;
+      color: #333;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Lora', 'Georgia', serif;
+      color: #5a3e2b;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #5a3e2b;
+      padding-bottom: 15px;
+    }
+    
+    .test-section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .font-sample {
+      font-size: 1.5rem;
+      margin: 15px 0;
+      padding: 10px;
+      border-left: 4px solid #5a3e2b;
+      background: #f0e6d3;
+    }
+    
+    .font-name {
+      font-weight: bold;
+      color: #5a3e2b;
+    }
+    
+    .status {
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    
+    .success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .debug-info {
+      background: #e2e3e5;
+      color: #383d41;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      margin: 20px 0;
+    }
+    
+    .steps {
+      background: #d1ecf1;
+      color: #0c5460;
+      padding: 15px;
+      border-radius: 5px;
+      border-left: 4px solid #0c5460;
+    }
+    
+    .steps h3 {
+      margin-top: 0;
+      text-align: left;
+    }
+    
+    .steps ol {
+      padding-left: 20px;
+    }
+    
+    .steps li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Диагностика подключения шрифтов</h1>
+  
+  <div class="test-section">
+    <h2>Тест шрифта Lora</h2>
+    <div class="font-sample" style="font-family: 'Lora', serif;">
+      <span class="font-name">Lora:</span> Съешь же ещё этих мягких французских булок, да выпей чаю.
+    </div>
+    <div class="font-sample" style="font-family: 'Lora', serif; font-weight: bold;">
+      <span class="font-name">Lora Bold:</span> Съешь же ещё этих мягких французских булок, да выпей чаю.
+    </div>
+    
+    <h2>Тест шрифта Roboto</h2>
+    <div class="font-sample" style="font-family: 'Roboto', sans-serif;">
+      <span class="font-name">Roboto:</span> Съешь же ещё этих мягких французских булок, да выпей чаю.
+    </div>
+    <div class="font-sample" style="font-family: 'Roboto', sans-serif; font-weight: bold;">
+      <span class="font-name">Roboto Bold:</span> Съешь же ещё этих мягких французских булок, да выпей чаю.
+    </div>
+  </div>
+  
+  <div class="test-section">
+    <h2>Диагностика проблемы</h2>
+    
+    <div id="font-status" class="status">
+      Проверяем подключение шрифтов...
+    </div>
+    
+    <div class="debug-info" id="debug-info">
+      // Информация для диагностики появится здесь после проверки
+    </div>
+    
+    <div class="steps">
+      <h3>Возможные причины и решения:</h3>
+      <ol>
+        <li><strong>Проверьте пути к файлам шрифтов</strong> - убедитесь, что папка fonts находится в правильном месте</li>
+        <li><strong>Проверьте имена файлов</strong> - они должны точно совпадать с указанными в CSS</li>
+        <li><strong>Проверьте форматы файлов</strong> - убедитесь, что файлы шрифтов не повреждены</li>
+        <li><strong>Проверьте консоль браузера</strong> (F12) - там могут быть ошибки загрузки ресурсов</li>
+        <li><strong>Попробуйте переименовать шрифт</strong> в определении @font-face (например, в 'LoraLocal')</li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Проверяем, загружены ли шрифты
+      setTimeout(function() {
+        const debugInfo = document.getElementById('debug-info');
+        const fontStatus = document.getElementById('font-status');
+        
+        // Проверяем, применяются ли шрифты
+        const loraTest = document.querySelector('[style*="font-family: \'Lora\'"]');
+        const loraFont = getComputedStyle(loraTest).fontFamily;
+        
+        const robotoTest = document.querySelector('[style*="font-family: \'Roboto\'"]');
+        const robotoFont = getComputedStyle(robotoTest).fontFamily;
+        
+        let statusText = '';
+        let debugText = '';
+        
+        // Анализируем результаты
+        if (loraFont.includes('Lora')) {
+          statusText += '<div class="success">Шрифт Lora успешно загружен и применяется!</div>';
+        } else {
+          statusText += '<div class="error">Шрифт Lora НЕ загружается. Используется резервный: ' + loraFont + '</div>';
+        }
+        
+        if (robotoFont.includes('Roboto')) {
+          statusText += '<div class="success">Шрифт Roboto успешно загружен и применяется!</div>';
+        } else {
+          statusText += '<div class="error">Шрифт Roboto НЕ загружается. Используется резервный: ' + robotoFont + '</div>';
+        }
+        
+        // Формируем отладочную информацию
+        debugText = `Проверка шрифтов:\n`;
+        debugText += `Lora: ${loraFont}\n`;
+        debugText += `Roboto: ${robotoFont}\n\n`;
+        debugText += `Рекомендации:\n`;
+        
+        if (!loraFont.includes('Lora')) {
+          debugText += `1. Проверьте наличие файлов в папке fonts/: Lora-Regular.woff2, Lora-Regular.woff, Lora-Bold.woff2, Lora-Bold.woff\n`;
+          debugText += `2. Убедитесь, что пути указаны правильно (относительно HTML-файла)\n`;
+          debugText += `3. Проверьте консоль браузера (F12) на наличие ошибок 404 (файл не найден)\n`;
+        }
+        
+        if (!robotoFont.includes('Roboto')) {
+          debugText += `1. Проверьте наличие файлов в папке fonts/: Roboto-Regular.woff2, Roboto-Regular.woff, Roboto-Bold.woff2, Roboto-Bold.woff\n`;
+        }
+        
+        if (loraFont.includes('Lora') && robotoFont.includes('Roboto')) {
+          debugText += `Все шрифты загружены корректно. Проблема может быть в другом месте вашего сайта.`;
+        }
+        
+        fontStatus.innerHTML = statusText;
+        debugInfo.textContent = debugText;
+        
+      }, 500);
+    });
+  </script>
+</body>
+</html>
