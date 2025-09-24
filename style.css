@@ -422,3 +422,17 @@ figcaption {
     gap: 15px;
   }
 }
+
+/* Специфичные правила для Firefox */
+@-moz-document url-prefix() {
+    body {
+        opacity: 0;
+        animation: moz-fadeIn 0.5s ease-in forwards;
+    }
+    
+    @keyframes moz-fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+}
