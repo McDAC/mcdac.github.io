@@ -138,6 +138,7 @@ figure {
   display: block;
   width: 300px;
   height: 450px;
+  aspect-ratio: 336/450; /* Помогает браузеру понять пропорции */
   object-fit: cover;
   border-radius: 3px;
   margin: 20px auto;
