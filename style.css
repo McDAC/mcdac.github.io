@@ -136,7 +136,7 @@ figure {
 
 .author-photo {
   display: block;
-  width: 300px;
+  width: 336px;
   height: 450px;
   aspect-ratio: 336/450; /* Помогает браузеру понять пропорции */
   object-fit: cover;
