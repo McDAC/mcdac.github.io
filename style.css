@@ -139,21 +139,10 @@ figure {
   width: 336px;
   height: 450px;
   aspect-ratio: 336/450; /* Помогает браузеру понять пропорции */
-  object-fit: cover;
-
- transform: translateZ(0); /* Создаёт отдельный слой рендеринга */
-    will-change: transform;   /* Подготовка браузера к анимации */
-    
+  object-fit: cover;  
   border-radius: 3px;
   margin: 20px auto;
-  border: 0px solid var(--primary);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: all 0.3s;
-}
-
-.author-photo:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 figcaption {
