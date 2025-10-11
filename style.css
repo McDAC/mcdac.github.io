@@ -290,7 +290,7 @@ figcaption {
 }
 
 .poem-card {
-  min-height: 120px; /* Фиксированная высота карточки */
+  min-height: 80px; /* Фиксированная высота карточки */
   height: auto;
   background: var(--light);
   padding: 15px;
