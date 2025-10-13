@@ -107,7 +107,7 @@ main {
 
 /* Заголовки */
 h1, h2, h3 {
-  font-family: Times New Roman', sans-serif;
+  font-family: sans-serif;
   font-weight: 700; /* Единое начертание для стабильности */
   letter-spacing: 0.5px;
   text-align: center;
