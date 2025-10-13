@@ -337,7 +337,7 @@ figcaption {
   border-radius: 3px;
   cursor: pointer;
   transition: all 0.2s;
-  font-family: var(--font-body);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .page-btn:hover {
