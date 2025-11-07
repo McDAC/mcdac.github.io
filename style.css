@@ -68,7 +68,7 @@ body {
 /* Шапка */
 header {
   background: var(--primary);
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 10px;
   text-align: center;
   border-radius: 3px;
