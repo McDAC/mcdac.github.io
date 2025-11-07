@@ -78,7 +78,7 @@ nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 45px;
+  gap: 65px;
 }
 
 nav a {
