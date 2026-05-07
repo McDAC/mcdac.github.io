@@ -18,8 +18,7 @@
 
    @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter_18pt-Regular.woff2') format('woff2'); /* Сначала самый легкий */
-    src: url('fonts/Inter_18pt-Regular.woff') format('woff');    /* Запасной вариант */
+    src: url('fonts/Inter18pt-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -52,7 +51,7 @@ html {
 
 /* Основные стили */
 body {
-  font-family: var(--font-body)
+  font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.6;
   background: var(--secondary);
