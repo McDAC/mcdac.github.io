@@ -27,6 +27,7 @@ function displayPoems() {
 
   poemsToShow.forEach(poem => {
     const poemCard = document.createElement('a');
+    poemCard.target = "_blank";
     poemCard.href = `poems/poem-${poem.id}.html`;
     poemCard.className = 'poem-card';
     poemCard.innerHTML = `
