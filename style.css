@@ -147,7 +147,7 @@ figcaption {
 /* Блоки контента (биография, контакты) */
 .content-block {
   background: var(--light);
-  padding: 25px 15px;
+  padding: 25px 35px;
   text-align: justify;
   border-radius: 3px;
   margin: 30px;
