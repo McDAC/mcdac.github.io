@@ -81,10 +81,6 @@ nav ul {
   gap: 75px;
 }
 
-nav {
-    margin-bottom: 20px;
-}
-
 nav a {
   color: var(--light);
   text-decoration: none;
@@ -116,6 +112,7 @@ h1, h2, h3 {
 h1 {
   font-size: 2.75rem;
   line-height: 4.43rem;
+  margin-top: 3rem;
 }
 
 h2 {
