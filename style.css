@@ -81,6 +81,10 @@ nav ul {
   gap: 75px;
 }
 
+nav {
+    margin-bottom: 20px;
+}
+
 nav a {
   color: var(--light);
   text-decoration: none;
