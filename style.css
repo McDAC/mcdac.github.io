@@ -74,6 +74,10 @@ header {
   border-radius: 3px;
 }
 
+nav {
+    padding-bottom: 20px;
+}
+
 nav ul {
   display: flex;
   justify-content: center;
